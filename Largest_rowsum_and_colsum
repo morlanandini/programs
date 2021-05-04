@@ -1,0 +1,52 @@
+//add largest row sum and largest column sum - accenture exam
+
+
+
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+     int a[][]=new int[n][m];
+     int i,j;
+     for(i=0;i<n;i++)
+     {
+         for(j=0;j<m;j++)
+         {
+             a[i][j]=sc.nextInt();
+         }
+     }
+     int rs=0,cs=0,max=0;
+     for(i=0;i<n;i++)
+     {
+         rs=0;
+         for(j=0;j<m;j++)
+     {
+         rs=rs+a[i][j];
+     }
+            if(rs>max)
+        {
+            max=rs;
+        }
+    }
+    
+    int maxc=0;
+    for(j=0;j<n;j++)
+     {
+         cs=0;
+         for(i=0;i<m;i++)
+     {
+         cs=cs+a[i][j];
+     }
+            if(cs>maxc)
+        {
+            maxc=cs;
+        }
+    }
+    
+    System.out.println(maxc+max);
+     
+     
+    }
+}
